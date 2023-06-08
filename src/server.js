@@ -10,6 +10,7 @@ const passport = require('passport');
 const morgan = require('morgan');
 var body_parser = require('body-parser');
 
+
 const Handlebars = require('handlebars')
 const {allowInsecurePrototypeAccess} = require('@handlebars/allow-prototype-access')
 
@@ -59,3 +60,11 @@ app.use(require('./routes/users.routes'));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(body_parser.urlencoded({extended:true}));
 module.exports = app;
+
+// base de datos
+
+// datos 
+
+const Datos = require('./routes/Datos');
+app.use(Datos);
+
